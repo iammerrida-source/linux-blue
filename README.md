@@ -88,3 +88,10 @@ linux-blue/
 ## 🧪 Lab
 
 See [`lab/`](lab/README.md) — Ubuntu VM shipping auditd telemetry via Auditbeat (ECS) to Elasticsearch/Kibana, plus a Splunk + Universal Forwarder pipeline for the SPL side.
+
+---
+
+## 📄 License
+
+Released under the [Apache License 2.0](LICENSE) — © 2026 Merida.
+The detection logic (Sigma / SPL / ES|QL / auditd) is free to reuse with attribution.

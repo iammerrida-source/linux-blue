@@ -9,7 +9,7 @@ date: 2026-10-26
 tags:
   - attack.persistence
   - attack.execution
-  - attack.privilege-escalation
+  - attack.privilege_escalation
   - attack.t1053.003
 logsource:
   product: linux
