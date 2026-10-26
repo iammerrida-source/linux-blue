@@ -1,0 +1,7 @@
+// T1548.003 — shell escapes from python / find (sudo abuse, GTFOBins-style)
+FROM auditbeat-*
+| WHERE process.name LIKE "python*" OR process.name == "find"
+| EVAL cmd = MV_CONCAT(process.args, " ")
+| WHERE cmd LIKE "*os.system*" OR cmd LIKE "*pty.spawn*" OR cmd LIKE "*subprocess*" OR cmd LIKE "*os.exec*" OR cmd LIKE "*-exec*sh*"
+| KEEP @timestamp, host.name, user.audit.name, user.name, process.pid, process.parent.pid, cmd
+| SORT @timestamp DESC

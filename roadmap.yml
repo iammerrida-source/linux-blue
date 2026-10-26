@@ -56,6 +56,11 @@
   tactic: Privilege Escalation
   status: planned
 
+- id: T1548.003
+  name: "Abuse Elevation Control Mechanism: Sudo and Sudo Caching"
+  tactic: Privilege Escalation
+  status: wip
+
 - id: T1070.003
   name: "Indicator Removal: Clear Command History"
   tactic: Defense Evasion

@@ -1,0 +1,19 @@
+# TODO
+title: ""
+id: ""
+status: experimental
+description: ""
+references:
+  - https://attack.mitre.org/techniques/T1548/003/
+author: Merida
+date: YYYY-MM-DD
+tags:
+  - attack.t1548.003
+logsource:
+  product: linux
+detection:
+  selection: {}
+  condition: selection
+falsepositives:
+  - ""
+level: medium

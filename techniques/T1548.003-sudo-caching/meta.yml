@@ -1,0 +1,9 @@
+id: T1548.003
+name: 'Abuse Elevation Control Mechanism: Sudo and Sudo Caching'
+tactic: Privilege Escalation
+status: wip
+platform: Linux
+telemetry:
+- auditd
+- auditbeat
+notes: ''

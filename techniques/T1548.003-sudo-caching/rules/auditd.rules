@@ -1,0 +1,2 @@
+# TODO — auditd collection rule(s) for T1548.003
+# -w /path -p wa -k lb_t1548_003

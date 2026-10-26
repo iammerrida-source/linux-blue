@@ -21,7 +21,7 @@ Every technique gets the same five things:
 ## 📊 Tracker
 
 <!-- TRACKER:START -->
-**Progress:** `░░░░░░░░░░░░░░░░░░░░` 0/15 done · ✅ 0 · 🧪 1 · 🔄 1 · 📥 3 · ⬜ 10
+**Progress:** `░░░░░░░░░░░░░░░░░░░░` 0/16 done · ✅ 0 · 🧪 1 · 🔄 2 · 📥 3 · ⬜ 10
 
 | Technique | Status | Tactic | Simulation | Playbook | auditd | Sigma | Elastic | Splunk |
 |---|---|---|---|---|---|---|---|---|
@@ -39,6 +39,7 @@ Every technique gets the same five things:
 | [T1543.002](https://attack.mitre.org/techniques/T1543/002/) Create or Modify System Process: Systemd Service | ⬜ planned | Persistence | — | — | — | — | — | — |
 | [T1546.004](https://attack.mitre.org/techniques/T1546/004/) Event Triggered Execution: Unix Shell Configuration Modification | ⬜ planned | Persistence | — | — | — | — | — | — |
 | [T1548.001](https://attack.mitre.org/techniques/T1548/001/) Abuse Elevation Control Mechanism: Setuid and Setgid | ⬜ planned | Privilege Escalation | — | — | — | — | — | — |
+| [T1548.003](https://attack.mitre.org/techniques/T1548/003/) [Abuse Elevation Control Mechanism: Sudo and Sudo Caching](techniques/T1548.003-sudo-caching/) | 🔄 in progress | Privilege Escalation | [📝](techniques/T1548.003-sudo-caching/simulate.md) | [📝](techniques/T1548.003-sudo-caching/playbook.md) | [📝](techniques/T1548.003-sudo-caching/rules/auditd.rules) | [📝](techniques/T1548.003-sudo-caching/rules/sigma.yml) | [✅](techniques/T1548.003-sudo-caching/rules/elastic.esql) | [📝](techniques/T1548.003-sudo-caching/rules/splunk.spl) |
 | [T1574.006](https://attack.mitre.org/techniques/T1574/006/) Hijack Execution Flow: Dynamic Linker Hijacking | ⬜ planned | Persistence | — | — | — | — | — | — |
 <!-- TRACKER:END -->
 
