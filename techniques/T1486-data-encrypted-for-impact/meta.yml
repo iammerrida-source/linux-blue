@@ -1,0 +1,9 @@
+id: T1486
+name: Data Encrypted for Impact
+tactic: Impact
+status: wip
+platform: Linux
+telemetry:
+- auditd
+- auditbeat
+notes: ''

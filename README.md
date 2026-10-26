@@ -21,7 +21,7 @@ Every technique gets the same five things:
 ## 📊 Tracker
 
 <!-- TRACKER:START -->
-**Progress:** `░░░░░░░░░░░░░░░░░░░░` 0/16 done · ✅ 0 · 🧪 1 · 🔄 2 · 📥 3 · ⬜ 10
+**Progress:** `░░░░░░░░░░░░░░░░░░░░` 0/16 done · ✅ 0 · 🧪 1 · 🔄 3 · 📥 2 · ⬜ 10
 
 | Technique | Status | Tactic | Simulation | Playbook | auditd | Sigma | Elastic | Splunk |
 |---|---|---|---|---|---|---|---|---|
@@ -35,7 +35,7 @@ Every technique gets the same five things:
 | [T1105](https://attack.mitre.org/techniques/T1105/) Ingress Tool Transfer | ⬜ planned | Command and Control | — | — | — | — | — | — |
 | [T1136.001](https://attack.mitre.org/techniques/T1136/001/) Create Account: Local Account | ⬜ planned | Persistence | — | — | — | — | — | — |
 | [T1485](https://attack.mitre.org/techniques/T1485/) Data Destruction | 📥 import | Impact | — | — | — | — | — | — |
-| [T1486](https://attack.mitre.org/techniques/T1486/) Data Encrypted for Impact | 📥 import | Impact | — | — | — | — | — | — |
+| [T1486](https://attack.mitre.org/techniques/T1486/) [Data Encrypted for Impact](techniques/T1486-data-encrypted-for-impact/) | 🔄 in progress | Impact | [📝](techniques/T1486-data-encrypted-for-impact/simulate.md) | [📝](techniques/T1486-data-encrypted-for-impact/playbook.md) | [📝](techniques/T1486-data-encrypted-for-impact/rules/auditd.rules) | [📝](techniques/T1486-data-encrypted-for-impact/rules/sigma.yml) | [✅](techniques/T1486-data-encrypted-for-impact/rules/elastic.esql) | [📝](techniques/T1486-data-encrypted-for-impact/rules/splunk.spl) |
 | [T1543.002](https://attack.mitre.org/techniques/T1543/002/) Create or Modify System Process: Systemd Service | ⬜ planned | Persistence | — | — | — | — | — | — |
 | [T1546.004](https://attack.mitre.org/techniques/T1546/004/) Event Triggered Execution: Unix Shell Configuration Modification | ⬜ planned | Persistence | — | — | — | — | — | — |
 | [T1548.001](https://attack.mitre.org/techniques/T1548/001/) Abuse Elevation Control Mechanism: Setuid and Setgid | ⬜ planned | Privilege Escalation | — | — | — | — | — | — |

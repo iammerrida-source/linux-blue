@@ -1,0 +1,19 @@
+// T1486 — symmetric GPG encryption (gpg -c with passphrase on the command line), Auditbeat / ECS
+// process.title is a text field in auditbeat, so RLIKE instead of LIKE on keyword
+FROM auditbeat-*
+| WHERE event.module == "auditd"
+  AND process.name == "gpg"
+  AND process.title RLIKE ".*-c.*"
+  AND process.title RLIKE ".*passphrase.*"
+  AND auditd.data.syscall == "execve"
+| STATS
+    encrypted_files = COUNT(*),
+    first_event     = MIN(@timestamp),
+    last_event      = MAX(@timestamp),
+    targets         = VALUES(process.title)
+  BY host.name
+| EVAL
+    duration_sec    = DATE_DIFF("second", first_event, last_event),
+    mitre_technique = "T1486 - Data Encrypted for Impact"
+| WHERE encrypted_files >= 2
+| SORT encrypted_files DESC
