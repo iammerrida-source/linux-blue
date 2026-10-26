@@ -1,0 +1,37 @@
+title: Cron File Created or Modified
+id: 6f0b8b6c-6a1e-4c4f-9a57-2d3f1b9e7c01
+status: experimental
+description: Detects writes to system or user cron locations, a common Linux persistence method (T1053.003).
+references:
+  - https://attack.mitre.org/techniques/T1053/003/
+author: Merida
+date: 2026-10-26
+tags:
+  - attack.persistence
+  - attack.execution
+  - attack.privilege-escalation
+  - attack.t1053.003
+logsource:
+  product: linux
+  category: file_event
+detection:
+  selection_dirs:
+    TargetFilename|startswith:
+      - '/etc/cron.d/'
+      - '/etc/cron.hourly/'
+      - '/etc/cron.daily/'
+      - '/etc/cron.weekly/'
+      - '/etc/cron.monthly/'
+      - '/var/spool/cron/'
+  selection_crontab:
+    TargetFilename: '/etc/crontab'
+  filter_pkg:
+    Image|endswith:
+      - '/dpkg'
+      - '/apt'
+      - '/apt-get'
+      - '/unattended-upgrade'
+  condition: 1 of selection_* and not filter_pkg
+falsepositives:
+  - Legitimate admin changes and configuration management tools
+level: medium

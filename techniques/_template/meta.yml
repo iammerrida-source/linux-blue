@@ -1,0 +1,7 @@
+id: TXXXX.XXX
+name: "Technique name"
+tactic: Persistence
+status: wip          # done | review | wip | import | planned
+platform: Linux
+telemetry: [auditd, auditbeat]
+notes: ""

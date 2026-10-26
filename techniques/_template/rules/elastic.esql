@@ -1,0 +1,4 @@
+// TODO — ES|QL detection for TXXXX.XXX
+FROM auditbeat-*
+| WHERE event.module == "auditd"
+| KEEP @timestamp, host.name, user.name, process.executable, process.args

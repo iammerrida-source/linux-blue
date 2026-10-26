@@ -1,0 +1,77 @@
+# Every technique on the list. A folder in techniques/ overrides the entry here.
+# status: done | review | wip | import | planned
+
+- id: T1053.003
+  name: "Scheduled Task/Job: Cron"
+  tactic: Persistence
+  status: review
+
+- id: T1486
+  name: Data Encrypted for Impact
+  tactic: Impact
+  status: import
+
+- id: T1485
+  name: Data Destruction
+  tactic: Impact
+  status: import
+
+- id: T1071.001
+  name: "Application Layer Protocol: Web Protocols"
+  tactic: Command and Control
+  status: import
+
+- id: T1018
+  name: Remote System Discovery
+  tactic: Discovery
+  status: wip
+
+- id: T1543.002
+  name: "Create or Modify System Process: Systemd Service"
+  tactic: Persistence
+  status: planned
+
+- id: T1546.004
+  name: "Event Triggered Execution: Unix Shell Configuration Modification"
+  tactic: Persistence
+  status: planned
+
+- id: T1098.004
+  name: "Account Manipulation: SSH Authorized Keys"
+  tactic: Persistence
+  status: planned
+
+- id: T1574.006
+  name: "Hijack Execution Flow: Dynamic Linker Hijacking"
+  tactic: Persistence
+  status: planned
+
+- id: T1136.001
+  name: "Create Account: Local Account"
+  tactic: Persistence
+  status: planned
+
+- id: T1548.001
+  name: "Abuse Elevation Control Mechanism: Setuid and Setgid"
+  tactic: Privilege Escalation
+  status: planned
+
+- id: T1070.003
+  name: "Indicator Removal: Clear Command History"
+  tactic: Defense Evasion
+  status: planned
+
+- id: T1059.004
+  name: "Command and Scripting Interpreter: Unix Shell"
+  tactic: Execution
+  status: planned
+
+- id: T1003.008
+  name: "OS Credential Dumping: /etc/passwd and /etc/shadow"
+  tactic: Credential Access
+  status: planned
+
+- id: T1105
+  name: Ingress Tool Transfer
+  tactic: Command and Control
+  status: planned

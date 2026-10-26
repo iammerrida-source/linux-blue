@@ -1,0 +1,7 @@
+id: T1053.003
+name: "Scheduled Task/Job: Cron"
+tactic: Persistence
+status: review          # rules are drafts — validate against lab telemetry, then set to done
+platform: Linux
+telemetry: [auditd, auditbeat]
+notes: "Reference example for the repo layout."

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.env
+*.local.*
+# raw exports often contain hostnames/IPs — commit only sanitized copies
+**/evidence/raw/

@@ -1,0 +1,5 @@
+``` T1053.003 — writes to cron locations (auditd key lb_cron). Draft: validate against your linux_audit field names. ```
+index=linux sourcetype=linux_audit key="lb_cron"
+    NOT exe IN ("/usr/bin/dpkg", "/usr/bin/apt", "/usr/bin/apt-get")
+| stats count min(_time) as first_seen max(_time) as last_seen values(exe) as exe values(name) as files by host, auid, uid
+| convert ctime(first_seen) ctime(last_seen)

@@ -1,0 +1,19 @@
+# TODO
+title: ""
+id: ""
+status: experimental
+description: ""
+references:
+  - https://attack.mitre.org/techniques/TXXXX/XXX/
+author: Merida
+date: YYYY-MM-DD
+tags:
+  - attack.txxxx.xxx
+logsource:
+  product: linux
+detection:
+  selection: {}
+  condition: selection
+falsepositives:
+  - ""
+level: medium

@@ -1,0 +1,8 @@
+// T1053.003 — writes to cron locations (Auditbeat / ECS)
+// Draft: validate field values against your own Kibana output before marking done.
+FROM auditbeat-*
+| WHERE event.module == "auditd"
+  AND (file.path LIKE "/etc/cron*" OR file.path LIKE "/var/spool/cron/*")
+  AND NOT process.name IN ("dpkg", "apt", "apt-get", "unattended-upgr")
+| KEEP @timestamp, host.name, user.name, process.executable, process.args, file.path, event.action
+| SORT @timestamp DESC
