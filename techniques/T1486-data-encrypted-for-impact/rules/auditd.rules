@@ -1,2 +1,3 @@
-# TODO — auditd collection rule(s) for T1486
-# -w /path -p wa -k lb_t1486
+# T1486 — gpg execution (drop into /etc/audit/rules.d/)
+# Exec watch emits SYSCALL + EXECVE + PROCTITLE records, which the ES|QL and SPL rules read.
+-w /usr/bin/gpg -p x -k lb_t1486

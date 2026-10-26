@@ -1,19 +1,27 @@
-# TODO
-title: ""
-id: ""
+title: Symmetric GPG Encryption With Passphrase On Command Line
+id: c0603185-daae-47b7-8de9-eb43dc91d4d7
 status: experimental
-description: ""
+description: Detects gpg run in symmetric mode (-c / --symmetric) with a passphrase supplied on the command line, a common way to encrypt files for impact on Linux (T1486). The ES|QL and SPL versions add a 2+ files per host threshold.
 references:
   - https://attack.mitre.org/techniques/T1486/
 author: Merida
-date: YYYY-MM-DD
+date: 2026-10-26
 tags:
+  - attack.impact
   - attack.t1486
 logsource:
   product: linux
+  category: process_creation
 detection:
-  selection: {}
-  condition: selection
+  selection_img:
+    Image|endswith: '/gpg'
+  selection_symmetric:
+    CommandLine|contains:
+      - ' -c '
+      - ' --symmetric'
+  selection_pass:
+    CommandLine|contains: '--passphrase'
+  condition: all of selection_*
 falsepositives:
-  - ""
-level: medium
+  - Backup or archive scripts that encrypt with gpg -c in batch mode
+level: high
