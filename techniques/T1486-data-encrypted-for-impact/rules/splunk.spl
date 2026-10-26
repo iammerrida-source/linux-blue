@@ -1,2 +1,11 @@
-``` TODO — SPL detection for T1486 ```
-index=linux sourcetype=linux_audit
+``` T1486 — symmetric GPG encryption (gpg -c with a passphrase on the command line), port of elastic.esql ```
+``` Uses EXECVE records (a0..aN) instead of PROCTITLE, which auditd stores hex-encoded. Draft: validate against your linux_audit output. ```
+index=linux sourcetype=linux_audit type=EXECVE (a0="gpg" OR a0="*/gpg") "passphrase"
+| rex max_match=0 "\sa\d+=\"?(?<arg>[^\"\s]+)"
+| where isnotnull(mvfind(arg, "^(-c|--symmetric)$")) AND isnotnull(mvfind(arg, "passphrase"))
+| eval cmdline=mvjoin(arg, " ")
+| stats count as encrypted_files min(_time) as first_event max(_time) as last_event values(cmdline) as targets by host
+| eval duration_sec=last_event-first_event, mitre_technique="T1486 - Data Encrypted for Impact"
+| where encrypted_files>=2
+| convert ctime(first_event) ctime(last_event)
+| sort - encrypted_files
